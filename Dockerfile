@@ -6,5 +6,6 @@ RUN apt-get update && apt-get install -y samtools bwa bedtools wget git python-p
 RUN pip3 install numpy scipy pysam bx-python Cython
 RUN git clone --recursive git://github.com/yezhengSTAT/AMSI_3Dgenomics
 RUN wget https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.14.08.jar
-RUN sudo bash addusers.sh
+ADD addusers.sh /
+RUN sudo bash /addusers.sh
 MAINTAINER Ye Zheng<yzheng23@fredhutch.org>
