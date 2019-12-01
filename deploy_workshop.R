@@ -6,12 +6,12 @@ gce_global_project(project)
 gce_global_zone("us-central1-a")
 
 vm = gce_vm(template = "rstudio",
-            name = "alphatest",
-            disk_size_gb = 100,
+            name = "hic",
+            disk_size_gb = 200,
             predefined_type = "n1-standard-32",
             dynamic_image = tag,
             user = "rstudio",
-            password = "pushu")
+            password = Sys.getenv("DOCKER_PWD"))
 
 # vm = gce_ssh_setup(vm,
 #                    username = "rstudio",
