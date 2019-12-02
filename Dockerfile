@@ -8,4 +8,10 @@ RUN git clone --recursive git://github.com/yezhengSTAT/AMSI_3Dgenomics
 RUN wget https://s3.amazonaws.com/hicfiles.tc4ga.com/public/juicer/juicer_tools_1.14.08.jar
 ADD addusers.sh /
 RUN sudo bash /addusers.sh
+
+## R package installation scripts
+ADD install.R /home/
+## Install all R packages
+RUN R -f /home/install.R
+
 MAINTAINER Ye Zheng<yzheng23@fredhutch.org>
