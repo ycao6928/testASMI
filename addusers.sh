@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo groupadd trainees
 
-for((userIndex = 1; userIndex <= 50; userIndex++))
+for((userIndex = 1; userIndex <= 70; userIndex++))
   do
 {
   userID=user${userIndex}
